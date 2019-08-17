@@ -152,12 +152,22 @@ namespace Apollo.Mission
             CheckFuse_FusePosition,
             CheckIfAGC_Program_Value1_IsRunning,
 
+            // 300 group - LM
+            LunarModule_CheckPin_PinID_PinPosition = 300,
+            LunarModule_CheckFuse_FusePosition,
+            LunarModule_CheckKnobIdSelection_Value1,
+            LunarModule_CheckTriggerButton,
+            LunarModule_CheckIfAGC_Program_Value1_IsRunning,
+            LunarModule_SwitchedToLunarStayArea,
+            LunarModule_LunarContact,
+
             // 400 group - stats
             Velocity_GreaterThan_Value1_FPS = 400,
             Velocity_LessThan_Value1_FPS,
 
             // 500 group
             Set_PinID_to_PinPosition = 500,
+            Set_LM_PinID_to_LM_PinPosition,
 
             // 750 group - PADs
             RequestTLI_PAD_LambdaValue1 = 750,
@@ -189,6 +199,14 @@ namespace Apollo.Mission
         public TriggerButtonID ButtonId { get; set; }
         public FuseID FuseID { get; set; }
         public FusePosition FusePosition { get; set; }
+        
+        public LunarModule.CockpitTools.PinID LM_PinID { get; set; }
+        public LunarModule.CockpitTools.PinPosition LM_PinPosition { get; set; }
+        public LunarModule.CockpitTools.KnobID LM_KnobID { get; set; }
+        public LunarModule.CockpitTools.TriggerButtonID LM_ButtonId { get; set; }
+        public LunarModule.CockpitTools.FuseID LM_FuseID { get; set; }
+        public LunarModule.CockpitTools.FusePosition LM_FusePosition { get; set; }
+
         public Failiure Fault { get; set; }
         public bool PlayAudioClip_String3 { get; set; }
         public bool Delivered;
