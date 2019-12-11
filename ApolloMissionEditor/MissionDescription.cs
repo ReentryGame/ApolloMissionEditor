@@ -28,6 +28,7 @@ namespace Apollo.Mission
         public string LunarModulePilot { get; set; }
         public bool DisableDefaultAudioSFX { get; set; } = false;
         public string LoadState { get; set; } = "";
+        public float EarthRotationOffsetDegrees { get; set; }
 
         public PayloadSelection Payload { get; set; } = PayloadSelection.LunarModule;
 
@@ -81,7 +82,7 @@ namespace Apollo.Mission
 
     public class MissionGoals
     {
-        public enum GoalType { Splashdown, CompleteActivityWithIndex_Target1 }
+        public enum GoalType { Splashdown, CompleteActivityWithIndex_Target1, LunarLanding }
         public GoalType Type { get; set; }
         public string Description { get; set; }
         public float Target1 { get; set; }
@@ -113,6 +114,8 @@ namespace Apollo.Mission
             Orbit_TimeToRetro_Value1Seconds,
             TimeToSPSBurn_Value1Seconds,
             CheckIfApIs_Value1_YesString1_NoString2,
+            GravityInfluencer_Earth,
+            GravityInfluencer_Moon,
 
             // 50 group - radio checks
             IsAtRadioStation_String1 = 50,
